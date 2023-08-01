@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import "./App.css";
+import {  useState } from "react";
+import "./App.scss";
 import axios from "axios";
 function App() {
   const [city, setCity] = useState("");
@@ -26,7 +26,8 @@ function App() {
           setHeading(city);
           setCity("");
           console.log(data);
-        });
+        }).catch((error)=>{console.log(error);
+        setCity('')})
     }
   };
 
@@ -41,14 +42,22 @@ function App() {
         value={city}
         placeholder="Enter City"
       />
-      {data ? (
-        <div>
-          <h2>{heading}</h2>
-          <h1>{data?.overall_aqi}</h1>
+     
+        <div className="container">
+          <h2 className="city-name">City : {heading}</h2>
+          <h1 className="aqi">AQI : {data?.overall_aqi}</h1>
+          <div className="footer">
+          <div className="pm2">
+            <h3>{}</h3>
+          </div>
+          <div className="pm10"></div>
+          <div className="SO2"></div>
+          <div className="CO">
+            <h3>{data?.CO?.concentration}</h3>
+          </div>
+          </div>
         </div>
-      ) : (
-        <h1>Enter valid city name</h1>
-      )}
+      
     </div>
   );
 }

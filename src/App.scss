@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital@1&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  height: 100vh;
+  background: linear-gradient(0deg,#FF55BB 0.03%,#FFD3A3);
+}
+.App{
+  height: 100vh;
+  font-family: 'Open Sans', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  input{
+    position: absolute;
+    top: 200px;
+    padding: 1rem;
+    width: 20%;
+    text-align: center;
+    border: none;
+    opacity: 0.5;
+    outline: none;
+    border-radius: 0.8rem;
+    color:palevioletred;
+    font-weight: 600;
+    font-size: 1rem;
+    box-shadow: 4px 6px 6px rgba(0,0,0,0.8),;
+  }
+  ::placeholder{
+    color:lightgrey
+  }
+
+  .container{
+    margin-top: 180px;
+    background-color:rgba(0,0,0,0.3);
+    height: 50%;
+    width: 40%;
+    display: flex;
+    position: relative;
+    color: white;
+    .city-name{
+      position: absolute;
+      top: 10px;
+      left: 5px;
+    }
+    .aqi{
+      position: absolute;
+      top: 50px;
+      left:5px
+    }
+    .footer{
+      position: absolute;
+      bottom: 10px;
+      display: flex;
+      justify-content: space-around;
+    }
+  }
+  
+}
